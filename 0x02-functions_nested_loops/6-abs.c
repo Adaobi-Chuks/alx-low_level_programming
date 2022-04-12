@@ -1,29 +1,27 @@
 #include "main.h"
 /**
- * print_sign - return 0 letter not lowercase, 1 letter lowercase
+ * _abs - valor absolute
  *
  *@n: The int to print
- * Return: Returns 1 (print +) n>0, returns 0 (is 0) n=0, returns -1 (-) n<0
+ * Return: Returns valor absolute
  */
-int print_sign(int n)
+
+int _abs(int n)
 {
 
-if (n > 0)
+if (n < 0) /*if n is greater than zero*/
 {
-_putchar ('+');
-return (1);
+return (n * (-1));
 }
 
-else if (n == 0)
+else if (n == 0) /*if n is equal 0*/
 {
-_putchar ('0');
 return (0);
 }
 
 else
 {
-_putchar ('-');
-return (-1);
+return (n); /*if n is positive*/
 }
 
 }
