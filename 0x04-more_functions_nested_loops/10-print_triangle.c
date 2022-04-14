@@ -1,47 +1,44 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
- * main - entry point
+ * print_triangle - prints triangle using "#" character of a given size
+ *@size: size of triangle
  *
  * Return: void
  */
-
-int main(void)
+void print_triangle(int size)
 {
+	int i = 1, a = 0;
 
-	int n = 100; /*Delcaring statements*/
-	int i;
-
-	i = 1;
-	while (i <= n) /*Start While*/
+	if (size > 0)
 	{
-		if (i % 3 == 0 && i % 5 == 0) /*Multple 3 and 5*/
+		if (size == 1)
 		{
-			printf("FizzBuzz ");
+			_putchar(35);
+			_putchar('\n');
 		}
-
-		else if (i % 3 == 0) /*Muitple 3*/
-		{
-			printf("Fizz ");
-		}
-
-		else if (i % 5 == 0) /*Multple 5*/
-		{
-			if (i < n)
-			printf("Buzz ");
-
-			else
-				printf("Buzz");
-		}
-
 		else
 		{
-			printf("%i ", i); /*Print i*/
+			while (i <= size)
+			{	a = 0;
+				while (a < size - i)
+				{
+					_putchar(' ');
+					a++;
+				}
+				a = 0;
+				while (a < i)
+				{
+					_putchar(35);
+					a++;
+				}
+				_putchar('\n');
+				i++;
+			}
 		}
-
-		i++;
-
-
 	}
-	printf("\n"); /*New line*/
-	return (0);
+	else
+	{
+		_putchar('\n');
+	}
 }
