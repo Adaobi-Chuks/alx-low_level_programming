@@ -1,8 +1,3 @@
-/*
- * File: 4-free_grid.c
- * Auth: Brennan D Baraban
- */
-
 #include "main.h"
 #include <stdlib.h>
 
