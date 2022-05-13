@@ -1,14 +1,16 @@
-#ifndef _CALC_H_
-#define _CALC_H_
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 /**
- * struct op - Struct op
- *
- * @op: The operator
- * @f: The function associated
+ * struct op - struct
+ * @op: Pointer
+ * @f: (int, int)
  */
+
 typedef struct op
 {
 	char *op;
@@ -21,19 +23,5 @@ int op_mul(int a, int b);
 int op_div(int a, int b);
 int op_mod(int a, int b);
 int (*get_op_func(char *s))(int, int);
-
-#endif
-
-
-function_pointers.h
-
-#ifndef _FUNCTION_POINTERS_
-#define _FUNCTION_POINTERS_
-
-#include <stdlib.h>
-
-void print_name(char *name, void (*f)(char *));
-void array_iterator(int *array, size_t size, void (*action)(int));
-int int_index(int *array, int size, int (*cmp)(int));
 
 #endif

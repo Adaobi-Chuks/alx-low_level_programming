@@ -1,40 +1,40 @@
 #include "3-calc.h"
 
 /**
- * main - check the code for Holberton School students.
- * @argc: argument count.
- * @argv: argument vector.
- *
- * Return: Always 0.
+ * main - arguments for struct
+ * @argc: numbers arguments
+ * @argv: string arguments
+ * Return: 0.
  */
+
 int main(int argc, char *argv[])
 {
-	int a, b;
-	int (*operation)(int, int);
+	int i, j;
+	int (*d)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
-	if (argv[2][1])
+	if (argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	operation = get_op_func(argv[2]);
+	d = get_op_func(argv[2]);
+		if (d == NULL)
+		{
+			printf("Error\n");
+			exit(99);
+		}
 
-	if (operation == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+	i = atoi(argv[1]);
+	j = atoi(argv[3]);
 
-	printf("%d\n", operation(a, b));
+	printf("%d\n", d(i, j));
+
 	return (0);
 }
