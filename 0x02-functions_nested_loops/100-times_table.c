@@ -11,7 +11,7 @@ if (n < 16 && n > -1)
 {
 for (a = 0; a <= n; a++)/*First for*/
 {
-for (b = 0; b <= n; b++)/*Secondo for*/
+for (b = 0; b <= n; b++)/*Second for*/
 {
 c = a * b;/* multiplication a*b*/
 if ((c / 10) == 0)/*If the first digit is 0*/
