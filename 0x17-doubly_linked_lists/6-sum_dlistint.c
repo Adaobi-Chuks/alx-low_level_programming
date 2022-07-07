@@ -1,24 +1,22 @@
 #include "lists.h"
+
 /**
- * get_dnodeint_at_index - locates a node at the given index
- * @head: pointer to the head of the list
- * @index: index of the node to locate
- *
- * Return: the located node else NULL
+ * sum_dlistint - returns the sum of all node data
+ * @head: head of node
+ * Return: sum of node data
  */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+int sum_dlistint(dlistint_t *head)
 {
-	unsigned int i = 1;
+	size_t res = 0;
 
 	if (head == NULL)
-		return (NULL);
-	while (head != NULL && i <= index)
+		return (0);
+
+	while (head != NULL)
 	{
+		res += head->n;
 		head = head->next;
-		i++;
 	}
-	i--;
-	if (i != index)
-		return (NULL);
-	return (head);
+
+	return (res);
 }
